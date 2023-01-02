@@ -22,6 +22,7 @@ struct Posts: Decodable {
 }
 
 struct Details: Decodable {
-    let id: Int?
-    let Name: String
+    let id: String?
+    let name: String?
+    let Name: String?
 }

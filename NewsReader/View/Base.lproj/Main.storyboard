@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="wvM-cc-xaT">
                                 <rect key="frame" x="18" y="104" width="357" height="34.333333333333343"/>
                                 <subviews>
-                                    <textField autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" borderStyle="roundedRect" placeholder="Search for a topic" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="25Q-81-tiQ">
+                                    <textField autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for a topic" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="25Q-81-tiQ">
                                         <rect key="frame" x="0.0" y="0.0" width="255.33333333333334" height="34.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="go"/>
@@ -48,11 +48,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="74" translatesAutoresizingMaskIntoConstraints="NO" id="thX-Ap-b6g" userLabel="TextStack">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="thX-Ap-b6g" userLabel="TextStack">
                                                     <rect key="frame" x="55" y="0.0" width="243" height="200"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ArticleTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6A-ZL-wAk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="243" height="110.33333333333333"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ArticleTitle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6A-ZL-wAk">
+                                                            <rect key="frame" x="0.0" y="0.0" width="243" height="184.33333333333334"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="243" id="A3Z-hO-QxV"/>
                                                             </constraints>
@@ -60,10 +60,10 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIk-Xy-lyG">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publisher" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIk-Xy-lyG">
                                                             <rect key="frame" x="0.0" y="184.33333333333334" width="243" height="15.666666666666657"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="243" id="cdV-Wb-hxx"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="243" id="cdV-Wb-hxx"/>
                                                                 <constraint firstAttribute="height" constant="15.666666666666657" id="duq-Sj-AtN"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
@@ -71,10 +71,6 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="pIk-Xy-lyG" firstAttribute="centerX" secondItem="thX-Ap-b6g" secondAttribute="centerX" id="2R2-JE-UxV"/>
-                                                        <constraint firstItem="v6A-ZL-wAk" firstAttribute="centerX" secondItem="thX-Ap-b6g" secondAttribute="centerX" id="MzC-VG-vrz"/>
-                                                    </constraints>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZe-lV-olS" userLabel="SpeechButton">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="200"/>

@@ -11,18 +11,18 @@ import AVFoundation
 protocol NewsManagerDelegate{
     func didLoadNewsArticles(news: [NewsData])
     func didFailWithError(error: Error)
-    
 }
 
-struct NewsManager{
+struct NewsManager {
     var delegate: NewsManagerDelegate?
     let apiURL = "https://newsapi.org/v2/everything?q="
     
     func fetchNews(query: String){
-        
-        //MARK: - Add spacing to query and get date
-        let date = "2022-12-29"
-        if let url = URL(string: "\(apiURL)\(query)&apikey=\(Constants.newsApiKey)&language=\(Constants.language)&from=\(date)&sortBy=publishedAt"){
+        let date = Date()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy-MM-dd"
+                let today = dateFormatter.string(from: date)
+        if let url = URL(string: "\(apiURL)\(query)&apikey=\(Constants.newsApiKey)&language=\(Constants.language)&from=\(today)&sortBy=publishedAt"){
             print(url)
             
             
@@ -42,7 +42,6 @@ struct NewsManager{
                             }
                         } catch {
                             delegate?.didFailWithError(error: error)
-                            print(error)
                         }
                     }
                 }
