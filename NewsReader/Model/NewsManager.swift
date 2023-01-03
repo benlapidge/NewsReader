@@ -28,6 +28,8 @@ struct NewsManager {
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let today = dateFormatter.string(from: date)
         
+        
+        // Async API call
         if let url = URL(string: "\(apiURL)\(trimmedQuery)&apikey=\(Constants.newsApiKey)&language=\(Constants.language)&from=\(today)&sortBy=publishedAt&searchIn=title"){
             print(url)
             
@@ -39,7 +41,7 @@ struct NewsManager {
                         do {
                             let news = try decoder.decode(NewsData.self, from: safeData)
                             DispatchQueue.main.async {
-                                delegate?.didLoadNewsArticles(news: [news])
+                                delegate?.didLoadNewsArticles(news: [news]) // Returns posts to search VC 
                             }
                         } catch {
                             delegate?.didFailWithError(error: error)

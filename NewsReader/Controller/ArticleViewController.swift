@@ -24,8 +24,8 @@ class ArticleViewController: UIViewController {
             let requestObj = URLRequest(url: url! as URL)
             
             /*
-             Handling in async, throwing security issue
-             this appears to be a new issue with xcode,
+             Handling in async, throwing security issue.
+             This appears to be a new issue with xcode,
              awaiting a bug fix.
              
              source: https://stackoverflow.com/questions/74038451/in-xcode-14-ios-16-purple-warnings-starting-with-this-method-should-not-be-ca
