@@ -44,7 +44,6 @@ class ArticleTableViewCell: UITableViewCell {
     func speak(utterance: String){
         let utterance = AVSpeechUtterance(string: utterance)
         let voice = AVSpeechSynthesisVoice(language: "en-GB")
-        
         utterance.voice = voice
         synthesizer.speak(utterance)
     }

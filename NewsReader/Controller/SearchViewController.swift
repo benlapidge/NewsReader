@@ -14,6 +14,7 @@ class SearchViewController: UIViewController, UITableViewDataSource {
     var posts: [NewsData]?
     
     //MARK: - IBOutlets
+    
     @IBOutlet weak var articleTable: UITableView!
     @IBOutlet weak var searchQueryTextField: UITextField!
     
@@ -38,7 +39,7 @@ class SearchViewController: UIViewController, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.webViewSegue {
-            let destinationVC = segue.destination as! ArticleViewController // Downcast to designated viewcontroller class desired. The ! means it will be FORCED.
+            let destinationVC = segue.destination as! ArticleViewController
             if let articleURL = articleURL {
                 destinationVC.articleURL = articleURL
             }
@@ -56,10 +57,9 @@ extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! ArticleTableViewCell
-        cell.delegate = self
         let article = posts![0].articles[indexPath.row]
+        cell.delegate = self
         cell.newsTitleLabel.text = article.title
-        
         cell.articleURL = article.url
         
         if article.source.name != nil {
@@ -71,6 +71,7 @@ extension SearchViewController: UITableViewDelegate {
         if article.description != nil {
             cell.articleDesc = article.description
         }
+        
         return cell
     }
 }

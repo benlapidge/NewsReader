@@ -18,20 +18,21 @@ struct NewsManager {
     let apiURL = "https://newsapi.org/v2/everything?q="
     
     func fetchNews(query: String){
+        
+        // trims spaces
+        let trimmedQuery = query.trimmingCharacters(in: .whitespaces)
+        
+        // gets current date and strips time
         let date = Date()
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                let today = dateFormatter.string(from: date)
-        if let url = URL(string: "\(apiURL)\(query)&apikey=\(Constants.newsApiKey)&language=\(Constants.language)&from=\(today)&sortBy=publishedAt"){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let today = dateFormatter.string(from: date)
+        
+        if let url = URL(string: "\(apiURL)\(trimmedQuery)&apikey=\(Constants.newsApiKey)&language=\(Constants.language)&from=\(today)&sortBy=publishedAt&searchIn=title"){
             print(url)
             
-            
-            //let session = URLSession(configuration: .default)
-            var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
-            
-            request.httpMethod = "GET"
-            
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            let session = URLSession(configuration: .default)
+            let task = session.dataTask(with: url) { data, response, error in
                 if error == nil {
                     let decoder = JSONDecoder()
                     if let safeData = data {
