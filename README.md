@@ -1,8 +1,6 @@
 # NewsReader
 Swift Storyboard News app that uses NewsAPI
 
-#  D4T4 Celebrus Task
-
 ## Dev notes
 NewsAPI restricts its api response based on geographic location. In the UK, the "description" field is unavailable, and "total articles" always returns 0 regardless of actual count. In this case, the speech synthesiser will read the title of the article aloud. Use of a VPN to spoof location permits access to the description field, and in this case, the speech synthesiser will read the description aloud.
 
