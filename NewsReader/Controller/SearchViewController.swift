@@ -87,6 +87,7 @@ extension SearchViewController: ArticleTableViewCellDelegate {
         print(error)
     }
 }
+
 //MARK: - UITextFieldDelegate
 extension SearchViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -114,6 +115,6 @@ extension SearchViewController: NewsManagerDelegate {
     }
     
     func didFailWithError(error: Error) {
-        print(error)
+        print("NewsManagerDelegate failed with: \(error)")
     }
 }

@@ -16,7 +16,7 @@ Create an iOS application with 2 screens. On the first screen we would like to s
 Below the search section, display these news title in a table view with two buttons on each table view cell. One of the button should read me the short description of the news while the other should show a new full screen with a web view in it and open the article. Make sure the HTTP API query runs asynchronously and does not affect the user experience.
 
 ## Hints:
-1. newsapi.org offers a free API access up to 1000 queries/day after a quick registration.
+1. newsapi.org offers a free API access up to 1000 queries/day after a quick registration.
 2. Documentation to the API: <https://newsapi.org/docs/endpoints/everything>
 3. You can do API tests with Postman easily
 4. To read text to the user you can use the iOS Speech Synthesis API: <https://developer.apple.com/documentation/avfoundation/speech_synthesis>

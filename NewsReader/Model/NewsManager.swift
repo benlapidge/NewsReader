@@ -41,10 +41,10 @@ struct NewsManager {
                         do {
                             let news = try decoder.decode(NewsData.self, from: safeData)
                             DispatchQueue.main.async {
-                                delegate?.didLoadNewsArticles(news: [news]) // Returns posts to search VC 
+                                delegate?.didLoadNewsArticles(news: [news]) // Returns posts to SearchVC 
                             }
                         } catch {
-                            delegate?.didFailWithError(error: error)
+                            delegate?.didFailWithError(error: error) // Returns error to SearchVC
                         }
                     }
                 }
