@@ -36,9 +36,10 @@ struct NewsManager {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
                 if error == nil {
-                    let decoder = JSONDecoder()
+                    
                     if let safeData = data {
                         do {
+                            let decoder = JSONDecoder()
                             let news = try decoder.decode(NewsData.self, from: safeData)
                             DispatchQueue.main.async {
                                 delegate?.didLoadNewsArticles(news: [news]) // Returns posts to SearchVC 
